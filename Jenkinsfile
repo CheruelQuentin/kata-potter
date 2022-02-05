@@ -21,8 +21,19 @@ java -version'''
     }
 
     stage('Build with maven') {
-      steps {
-        sh 'mvn compile test package'
+      parallel {
+        stage('Build with maven') {
+          steps {
+            sh 'mvn compile test package'
+          }
+        }
+
+        stage('Unit Test') {
+          steps {
+            sh 'mvn test'
+          }
+        }
+
       }
     }
 
