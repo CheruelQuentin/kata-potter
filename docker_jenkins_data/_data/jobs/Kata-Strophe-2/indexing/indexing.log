@@ -1,0 +1,31 @@
+Started by user [8mha:////4ERFzu/e4lfOrcmu+rdTwZuP8cAe5TVdlkVvpRhpFDbNAAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyWEgYu/dLi1CL9rMTkbABJReJsvwAAAA==[0mroot
+[Sun Feb 13 17:18:18 UTC 2022] Starting branch indexing...
+[8mha:////4CDzIPF+n+8xs6yiN5IaYTg3umYOvWmECm0QpqMEoWG7AAAAhB+LCAAAAAAAAP9b85aBtbiIwSa/KF0vKzUvOzOvODlTryCnNB3I0kvPLMkoTYpPKkrMS86IL84vLUpO1XPPLPEoTXLOzyvOz0n1yy9JZYAARiYGRi8GzpLM3NTiksTcgooiBqmM0pTi/Dy9ZIhiPayaGCoKgHTdF/FVpQD0mCMDjgAAAA==[0mConnecting to https://api.github.com using jack/****** (GitHub Access Token)
+Examining [8mha:////4E4/9j0eXVYw8DOynni7J3XEm6u2o3LMNgWhK63D/4KAAAAAqx+LCAAAAAAAAP9djLENwjAQRY8gGIAyYoXEHQUoVRqQIiTEBAZOtok5W/YZhTVYAxqGYBx2ICgdr/mv+e/5gUkMMNfpFB2VR0fRWSzXN4/BGmq3jnFRPV7V3b8zyDYwtUiKdQPjFCzDrDnLqxRWkhJ7DobUqguQ/+XqYX8xGBhlAJ3vJWcoNLOPSyGUYZ0O/esiao0hod0lJDYkWsmy8I4ZwxdRTntrsgAAAA==[0mCheruelQuentin/kata-potter
+
+  Checking branches...
+
+  Getting remote branches...
+
+    Checking branch [8mha:////4BdwMNCI8ilcMmbXxvjGq0D/Z85X4MLUlzCPz5xBNOoXAAAAsh+LCAAAAAAAAP9djLENwjAQRY8gMgAlYgXiDglQqjQgRUiICQycbBPHts5nFNZgDWgYgnHYgSA6fvNf897jDaNIMNXpFL0rjt5Fb7FYXwOSNa7ZesZ5eX+Wt/DKINtAbtEp1jUME1mGcX2WFymsdErsmYxTq45g8perfv+NwW+DDKALPeQMC80c4lIIZVinQ2+1otJICe0uoWPjRCNZzoJnRhJMiKKVsecPEttuN74AAAA=[0mmaster
+      ‘Jenkinsfile’ found
+    Met criteria
+Changes detected: master (7e1152f41f6ce063cedbdfe175b994e042814fa8 → 356256b0110841e23b6a148950eb76d4af144e7c)
+Scheduled build for branch: master
+
+    Checking branch [8mha:////4ExsaGYQdDPY80f5IW12NSkoAZYLt8WYu6q971FBr6M1AAAAsh+LCAAAAAAAAP9djL0NwjAQRo/wMwAlYgXiDiRQqjQgRUiICQycbBPnbNlnFNZgDWgYgnHYgSA6XvO95nuPNwxjgKlOp+goPzqKzmK+vnoM1lC9dYzz4v4sbv6VQbaBkUVSrCvop2AZxtVZXqSwkpTYczCkVm2AyV+u/O03Bj96GUDrOxkwLDSzj0shlGGdDt2rEaXGkNDuEhIbErVkOfOOGYPggCgaaegDPDgt3bwAAAA=[0mmain
+      ‘Jenkinsfile’ not found
+    Does not meet criteria
+
+  2 branches were processed
+
+  Checking pull-requests...
+
+  Getting remote pull requests...
+
+  0 pull requests were processed
+
+Finished examining CheruelQuentin/kata-potter
+
+[Sun Feb 13 17:18:19 UTC 2022] Finished branch indexing. Indexing took 1.3 sec
+Finished: SUCCESS

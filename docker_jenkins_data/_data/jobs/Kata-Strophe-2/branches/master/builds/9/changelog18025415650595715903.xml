@@ -1,0 +1,9 @@
+commit 4f8e1a6a55495323708d19c0d28f9470d62a00b7
+tree 773da4b39a3b18560dcd73c31da26d1878b33f2e
+parent 40d09da67ef75bdca449ed2482bb506ccef9ffd6
+author CheruelQuentin <65130218+CheruelQuentin@users.noreply.github.com> 2022-02-13 15:36:19 +0100
+committer CheruelQuentin <65130218+CheruelQuentin@users.noreply.github.com> 2022-02-13 15:36:19 +0100
+
+    Added Jenkinsfile
+
+:100644 100644 f395bd83b997f2a608a0e7ccdccf31e38e66c435 8e25ce0e50a9dd966fbb9646e1b905bd9c5cb265 M	Jenkinsfile

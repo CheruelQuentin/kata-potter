@@ -1,0 +1,17 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<fingerprint>
+  <timestamp>2022-02-05 16:49:02.258 UTC</timestamp>
+  <md5sum>a0b1b78f0fbfb3a9a2fa114506e9a511</md5sum>
+  <fileName>Credential id=github name=jack/****** (GitHub Access Token)</fileName>
+  <usages>
+    <entry>
+      <string>Kata-Strophe-2/master</string>
+      <ranges>1-6,8-13</ranges>
+    </entry>
+    <entry>
+      <string>kata-potter/master</string>
+      <ranges>1-10</ranges>
+    </entry>
+  </usages>
+  <facets/>
+</fingerprint>
