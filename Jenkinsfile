@@ -34,6 +34,12 @@ java -version'''
           }
         }
 
+        stage('Checkstyle') {
+          steps {
+            sh 'mvn checkstyle:checkstyle'
+          }
+        }
+
       }
     }
 
