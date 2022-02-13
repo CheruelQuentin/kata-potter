@@ -40,6 +40,12 @@ java -version'''
           }
         }
 
+        stage('PMD') {
+          steps {
+            sh 'mvn pmd:pmd'
+          }
+        }
+
       }
     }
 
