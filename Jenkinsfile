@@ -48,7 +48,7 @@ java -version'''
 
         stage('Coverage with jacoco') {
           steps {
-            sh 'mvn clean jacoco:prepare-agent install jacoco:report'
+            sh 'mvn jacoco:report'
           }
         }
 
