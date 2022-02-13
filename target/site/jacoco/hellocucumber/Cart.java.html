@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Cart.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Kata_Potter</a> &gt; <a href="index.source.html" class="el_package">hellocucumber</a> &gt; <span class="el_source">Cart.java</span></div><h1>Cart.java</h1><pre class="source lang-java linenums">package hellocucumber;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Cart {
+
+    private List&lt;Integer&gt; books;
+
+<span class="fc" id="L10">    public Cart() {</span>
+<span class="fc" id="L11">        books = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L12">    }</span>
+
+    public boolean addVolumes(int nbVolumes) {
+        //There is only 5 different volumes so cart size can't be greater than 5
+<span class="fc bfc" id="L16" title="All 2 branches covered.">        if(books.size() == 5) return false;</span>
+<span class="fc" id="L17">        books.add(nbVolumes);</span>
+<span class="fc" id="L18">        return true;</span>
+    }
+
+    public boolean addVolumes(int[] volumes) {
+        //There is only 5 different volumes so cart size can't be greater than 5
+<span class="fc bfc" id="L23" title="All 2 branches covered.">        if(books.size() + volumes.length &gt; 5) return false;</span>
+<span class="fc bfc" id="L24" title="All 2 branches covered.">        for(int nbVolumes : volumes) {</span>
+<span class="fc" id="L25">            books.add(nbVolumes);</span>
+        }
+<span class="fc" id="L27">        return true;</span>
+    }
+
+    public String getPrice() {
+<span class="fc" id="L31">        List&lt;Integer&gt; bookSetsUncapped = makeSetsOfUniqueVolumes(5);</span>
+        //Make sets of unique volumes with a max set size of 4 to try to get a better discount
+        //1 set of five + 1 set of 3 -&gt; 35% discount
+        //2 sets of four -&gt; 40% discount
+<span class="fc" id="L35">        List&lt;Integer&gt; bookSetsCappedAt4 = makeSetsOfUniqueVolumes(4);</span>
+
+<span class="fc" id="L37">        double totalDiscountUncapped = getTotalDiscountForBookSets(bookSetsUncapped);</span>
+<span class="fc" id="L38">        double totalDiscountCapped = getTotalDiscountForBookSets(bookSetsCappedAt4);</span>
+
+<span class="fc" id="L40">        double priceWithBestDiscount = 0;</span>
+<span class="fc bfc" id="L41" title="All 2 branches covered.">        if(totalDiscountCapped &gt; totalDiscountUncapped) {</span>
+<span class="fc" id="L42">            priceWithBestDiscount = calculatePriceOfBookSets(bookSetsCappedAt4);</span>
+        }
+<span class="pc bpc" id="L44" title="1 of 2 branches missed.">        else if(totalDiscountCapped &lt;= totalDiscountUncapped) {</span>
+<span class="fc" id="L45">            priceWithBestDiscount = calculatePriceOfBookSets(bookSetsUncapped);</span>
+        }
+<span class="fc" id="L47">        return priceWithBestDiscount + &quot; euros&quot;;</span>
+    }
+
+    public double getDiscount(int numberOfUniqueVolumes) {
+<span class="fc bfc" id="L51" title="All 2 branches covered.">        if (numberOfUniqueVolumes &lt; 0) throw new IllegalArgumentException(&quot;Number of volumes can't be negative.&quot;);</span>
+
+<span class="fc bfc" id="L53" title="All 5 branches covered.">        switch (numberOfUniqueVolumes) {</span>
+            case 0:
+            case 1:
+<span class="fc" id="L56">                return 0;</span>
+<span class="fc" id="L57">            case 2: return 0.05;</span>
+<span class="fc" id="L58">            case 3: return 0.1;</span>
+<span class="fc" id="L59">            case 4: return 0.2;</span>
+<span class="fc" id="L60">            default: return 0.25;</span>
+        }
+    }
+
+    public int getNumberOfBooksInCart(List&lt;Integer&gt; books) {
+<span class="fc" id="L65">        int nbOfBooks = 0;</span>
+<span class="fc bfc" id="L66" title="All 2 branches covered.">        for (int nbVolumes : books) {</span>
+<span class="fc" id="L67">            nbOfBooks += nbVolumes;</span>
+<span class="fc" id="L68">        }</span>
+<span class="fc" id="L69">        return nbOfBooks;</span>
+    }
+
+    public int makeSetOfUniqueVolumes(List&lt;Integer&gt; books, int maxSetSize) {
+<span class="fc" id="L73">        int setSize = 0;</span>
+<span class="fc bfc" id="L74" title="All 2 branches covered.">        for(int i = 0; i &lt; books.size(); i++) {</span>
+<span class="fc bfc" id="L75" title="All 2 branches covered.">            if(setSize == maxSetSize) break;</span>
+<span class="fc bfc" id="L76" title="All 2 branches covered.">            if(books.get(i) != 0) {</span>
+<span class="fc" id="L77">                books.set(i, books.get(i) - 1);</span>
+<span class="fc" id="L78">                setSize++;</span>
+            }
+        }
+<span class="fc" id="L81">        return setSize;</span>
+    }
+
+    public List&lt;Integer&gt; makeSetsOfUniqueVolumes(int maxSetSize) {
+<span class="fc" id="L85">        List&lt;Integer&gt; sets = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L86">        List&lt;Integer&gt; booksCopy = new ArrayList&lt;&gt;(books);</span>
+<span class="fc bfc" id="L87" title="All 2 branches covered.">        while(getNumberOfBooksInCart(booksCopy) &gt; 0) {</span>
+<span class="fc" id="L88">            sets.add(makeSetOfUniqueVolumes(booksCopy, maxSetSize));</span>
+        }
+<span class="fc" id="L90">        return sets;</span>
+    }
+
+    public List&lt;Integer&gt; getBooks() {
+<span class="fc" id="L94">        return books;</span>
+    }
+
+    public double calculatePriceOfBookSets(List&lt;Integer&gt; bookSets) {
+<span class="fc" id="L98">        double price = 0;</span>
+<span class="fc bfc" id="L99" title="All 2 branches covered.">        for(int nbVolumes : bookSets) {</span>
+<span class="fc" id="L100">            price += nbVolumes * 8 * (1 - getDiscount(nbVolumes));</span>
+<span class="fc" id="L101">        }</span>
+<span class="fc" id="L102">        return price;</span>
+    }
+
+    public double getTotalDiscountForBookSets(List&lt;Integer&gt; bookSets) {
+<span class="fc" id="L106">        double totalDiscount = 0;</span>
+<span class="fc bfc" id="L107" title="All 2 branches covered.">        for(int nbVolumes : bookSets) {</span>
+<span class="fc" id="L108">            totalDiscount += getDiscount(nbVolumes);</span>
+<span class="fc" id="L109">        }</span>
+<span class="fc" id="L110">        return totalDiscount;</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
