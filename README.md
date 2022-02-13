@@ -22,6 +22,6 @@
 <br/>
 
 If needed, you can execute this commands if the pipeline crash (maven not reconized):
-docker exec -it -u root desktop-jenkins-1 bash
-apt-get update
+docker exec -it -u root desktop-jenkins-1 bash |
+apt-get update |
 apt-get install maven
